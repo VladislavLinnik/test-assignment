@@ -31,3 +31,10 @@ mark {
     }
   }
 }
+
+[appSentinel] {
+  display: block;
+  min-height: 10px;
+  width: 100%;
+  background: red; /* чтобы точно видеть, где он на телефоне */
+}
