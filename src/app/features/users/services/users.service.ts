@@ -2,9 +2,7 @@ import { computed, Injectable, signal } from '@angular/core';
 import { User } from '@features/users/models/user.model';
 import { generateUsers } from '@core/utils/generate-users.util';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class UsersService {
   private RECORDS_PER_PAGE = 50;
 

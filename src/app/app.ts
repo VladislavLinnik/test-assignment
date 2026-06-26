@@ -1,11 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { UsersTable } from '@features/users/components/users-table/users-table';
-import { UsersSearch } from '@features/users/components/users-search/users-search';
+import { UsersPage } from '@features/users/pages/users-page/users-page';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
-  imports: [UsersTable, UsersSearch],
+  imports: [UsersPage],
   styleUrl: './app.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
