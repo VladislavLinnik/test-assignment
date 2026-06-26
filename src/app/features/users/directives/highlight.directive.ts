@@ -6,14 +6,14 @@ import { Directive, effect, ElementRef, inject, input } from '@angular/core';
 })
 export class HighlightDirective {
   readonly appHighlight = input.required<string>();
-  readonly search = input.required<string>();
+  readonly searchTerm = input.required<string>();
 
   private readonly el = inject(ElementRef<HTMLElement>);
 
   constructor() {
     effect(() => {
       const text = this.appHighlight();
-      const query = this.search()?.trim();
+      const query = this.searchTerm().trim();
       const el = this.el.nativeElement;
 
       if (!query) {

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { NzTableModule } from 'ng-zorro-antd/table';
-import { UsersService } from '@core/services/users.service';
+import { UsersService } from '@features/users/services/users.service';
 import { DatePipe } from '@angular/common';
 import { USERS_TABLE_COLUMNS } from '@features/users/constants/users-table-columns.constant';
 import { NzTagComponent } from 'ng-zorro-antd/tag';

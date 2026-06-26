@@ -1,5 +1,6 @@
 <nz-table #table
           [nzData]="users()"
+          [nzBordered]="true"
           [nzPageSize]="users().length"
           [nzShowPagination]="false">
   <thead>
@@ -23,13 +24,13 @@
     @for (data of table.data; track data.id) {
       <tr>
         <td [appHighlight]="data.firstName"
-            [search]="usersService.searchQuery()"></td>
+            [searchTerm]="usersService.searchQuery()"></td>
         <td [appHighlight]="data.lastName"
-            [search]="usersService.searchQuery()">{{ data.lastName }}</td>
+            [searchTerm]="usersService.searchQuery()">{{ data.lastName }}</td>
         <td [appHighlight]="(data.dateOfBirth | date:'dd MMMM yyyy') ?? ''"
-            [search]="usersService.searchQuery()">{{ data.dateOfBirth | date:'dd MMMM yyyy' }}</td>
+            [searchTerm]="usersService.searchQuery()">{{ data.dateOfBirth | date:'dd MMMM yyyy' }}</td>
         <td [appHighlight]="data.phone"
-            [search]="usersService.searchQuery()">{{ data.phone }}</td>
+            [searchTerm]="usersService.searchQuery()">{{ data.phone }}</td>
         <td>
           <nz-tag [nzColor]="data.isActive ? 'success' : 'error'">
             {{ data.isActive ? 'Active' : 'Non-active' }}

@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { NzInputDirective } from 'ng-zorro-antd/input';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UsersService } from '@core/services/users.service';
+import { FormsModule } from '@angular/forms';
+import { UsersService } from '@features/users/services/users.service';
 import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-users-search',
-  imports: [NzInputDirective, ReactiveFormsModule, FormsModule],
+  imports: [NzInputDirective, FormsModule],
   templateUrl: './users-search.html',
   styleUrl: './users-search.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

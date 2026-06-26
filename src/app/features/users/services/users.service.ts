@@ -1,6 +1,6 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { User } from '@features/users/models/user.model';
-import { generateUsers } from '../utils/generate-users.util';
+import { generateUsers } from '@core/utils/generate-users.util';
 
 @Injectable({
   providedIn: 'root',
