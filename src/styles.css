@@ -1,27 +1,37 @@
-.ant-table-content th {
-  background-color: #f0f0f0;
-  color: #333;
-}
+.ant-table-content {
+  table {
+    border-collapse: collapse;
+  }
 
-.ant-table-content td,
-.ant-table-content th {
-  padding: 10px;
-  border: 1px solid #d9d9d9;
-}
+  thead {
+    position: sticky;
+    top: 32px;
+    z-index: 1;
+    background: #fff;
+  }
 
-.ant-table-content table {
-  border-collapse: collapse;
-}
+  th {
+    background-color: #f0f0f0;
+    color: #333;
+  }
 
-.ant-table-content thead {
-  position: sticky;
-  top: 32px;
-  z-index: 1;
-  background: #fff;
+  td, th {
+    border: 1px solid #f0f0f0;
+  }
 }
 
 mark {
   background-color: #ffe58f;
   padding: 0;
   border-radius: 2px;
+}
+
+@media screen and (max-width: 600px) {
+  .ant-table-content {
+    overflow: auto;
+
+    thead {
+      top: 0;
+    }
+  }
 }
