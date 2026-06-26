@@ -6,10 +6,7 @@ export const USERS_TABLE_COLUMNS: ColumnItem<User>[] = [
   {
     name: 'First name',
     sortOrder: null,
-    sortFn: (a: User, b: User) => {
-      console.log(1);
-      return a.firstName.localeCompare(b.firstName);
-    },
+    sortFn: (a: User, b: User) => a.firstName.localeCompare(b.firstName),
     sortDirections: ['ascend', 'descend', null],
     listOfFilter: [],
     filterFn: null,
