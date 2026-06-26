@@ -4,17 +4,18 @@ import { UsersService } from '@core/services/users.service';
 import { DatePipe } from '@angular/common';
 import { USERS_TABLE_COLUMNS } from '@features/users/constants/users-table-columns.constant';
 import { NzTagComponent } from 'ng-zorro-antd/tag';
+import { SentinelDirective } from '@features/users/directives/sentinel.directive';
 
 @Component({
   selector: 'app-users-table',
-  imports: [NzTableModule, DatePipe, NzTagComponent],
+  imports: [NzTableModule, DatePipe, NzTagComponent, SentinelDirective],
   templateUrl: './users-table.html',
   styleUrl: './users-table.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersTable {
-  private readonly usersService = inject(UsersService);
-  readonly users = this.usersService.users();
+  readonly usersService = inject(UsersService);
+  readonly users = this.usersService.visibleUsers;
 
   readonly listOfColumns = USERS_TABLE_COLUMNS;
 }

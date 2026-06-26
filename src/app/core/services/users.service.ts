@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 import { User } from '@features/users/models/user.model';
 import { generateUsers } from '../utils/generate-users.util';
 
@@ -6,5 +6,16 @@ import { generateUsers } from '../utils/generate-users.util';
   providedIn: 'root',
 })
 export class UsersService {
-  readonly users = signal<User[]>(generateUsers()).asReadonly();
+  private RECORDS_PER_PAGE = 50;
+
+  private readonly _users = signal<User[]>(generateUsers()).asReadonly();
+  private _page = signal(1);
+
+  readonly visibleUsers = computed(() => {
+    return this._users().slice(0, this._page() * this.RECORDS_PER_PAGE);
+  });
+
+  nextPage(): void {
+    this._page.update((p) => ++p);
+  }
 }

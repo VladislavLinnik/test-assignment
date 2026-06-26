@@ -1,6 +1,7 @@
 <nz-table #table
-          [nzData]="users"
-          [nzFrontPagination]="false">
+          [nzData]="users()"
+          [nzPageSize]="users().length"
+          [nzShowPagination]="false">
   <thead>
     <tr>
       @for (column of listOfColumns; track column.name) {
@@ -34,3 +35,4 @@
     }
   </tbody>
 </nz-table>
+<div appSentinel (reached)="usersService.nextPage()"></div>

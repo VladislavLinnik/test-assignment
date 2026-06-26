@@ -4,7 +4,7 @@ const FIRST_NAMES = ['James', 'Emma', 'Liam', 'Olivia', 'Noah', 'Ava', 'William'
 const LAST_NAMES = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller'];
 
 export function generateUsers(): User[] {
-  return Array.from({ length: 2000 }, (_, i) => ({
+  return Array.from({ length: 20000 }, (_, i) => ({
     id: i,
     firstName: FIRST_NAMES[Math.floor(Math.random() * FIRST_NAMES.length)],
     lastName: LAST_NAMES[Math.floor(Math.random() * LAST_NAMES.length)],
