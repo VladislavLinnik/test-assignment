@@ -1,0 +1,3 @@
+<input nz-input placeholder="Search a user"
+       [ngModel]="usersService.searchQuery()"
+       (ngModelChange)="onSearch($event)" />

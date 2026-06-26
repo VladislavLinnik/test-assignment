@@ -1,0 +1,7 @@
+:host {
+  margin-bottom: 10px;
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}

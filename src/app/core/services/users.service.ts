@@ -15,7 +15,14 @@ export class UsersService {
     return this._users().slice(0, this._page() * this.RECORDS_PER_PAGE);
   });
 
-  nextPage(): void {
-    this._page.update((p) => ++p);
+  private readonly _searchQuery = signal('');
+  readonly searchQuery = this._searchQuery.asReadonly();
+
+  setNextPage(): void {
+    this._page.update((p) => p + 1);
+  }
+
+  setSearch(query: string): void {
+    this._searchQuery.set(query);
   }
 }

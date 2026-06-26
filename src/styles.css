@@ -15,7 +15,13 @@
 
 .ant-table-content thead {
   position: sticky;
-  top: 0;
+  top: 32px;
   z-index: 1;
   background: #fff;
+}
+
+mark {
+  background-color: #ffe58f;
+  padding: 0;
+  border-radius: 2px;
 }

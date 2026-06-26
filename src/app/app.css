@@ -4,8 +4,5 @@
   width: 90%;
   max-width: 1170px;
   display: block;
-}
-
-.search-input {
-  margin-bottom: 10px;
+  position: relative;
 }

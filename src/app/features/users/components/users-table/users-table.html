@@ -22,10 +22,14 @@
   <tbody>
     @for (data of table.data; track data.id) {
       <tr>
-        <td>{{ data.firstName }}</td>
-        <td>{{ data.lastName }}</td>
-        <td>{{ data.dateOfBirth | date:'dd MMMM yyyy' }}</td>
-        <td>{{ data.phone }}</td>
+        <td [appHighlight]="data.firstName"
+            [search]="usersService.searchQuery()"></td>
+        <td [appHighlight]="data.lastName"
+            [search]="usersService.searchQuery()">{{ data.lastName }}</td>
+        <td [appHighlight]="(data.dateOfBirth | date:'dd MMMM yyyy') ?? ''"
+            [search]="usersService.searchQuery()">{{ data.dateOfBirth | date:'dd MMMM yyyy' }}</td>
+        <td [appHighlight]="data.phone"
+            [search]="usersService.searchQuery()">{{ data.phone }}</td>
         <td>
           <nz-tag [nzColor]="data.isActive ? 'success' : 'error'">
             {{ data.isActive ? 'Active' : 'Non-active' }}
@@ -35,4 +39,4 @@
     }
   </tbody>
 </nz-table>
-<div appSentinel (reached)="usersService.nextPage()"></div>
+<div appSentinel (reached)="usersService.setNextPage()"></div>
