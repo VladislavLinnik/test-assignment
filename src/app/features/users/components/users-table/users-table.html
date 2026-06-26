@@ -1,0 +1,36 @@
+<nz-table #table
+          [nzData]="users"
+          [nzFrontPagination]="false">
+  <thead>
+    <tr>
+      @for (column of listOfColumns; track column.name) {
+        <th
+          [nzSortOrder]="column.sortOrder"
+          [nzSortFn]="column.sortFn"
+          [nzSortDirections]="column.sortDirections"
+          [nzShowFilter]="!!column.listOfFilter.length"
+          [nzFilters]="column.listOfFilter"
+          [nzFilterFn]="column.filterFn"
+          [nzFilterMultiple]="false"
+        >
+          {{ column.name }}
+        </th>
+      }
+    </tr>
+  </thead>
+  <tbody>
+    @for (data of table.data; track data.id) {
+      <tr>
+        <td>{{ data.firstName }}</td>
+        <td>{{ data.lastName }}</td>
+        <td>{{ data.dateOfBirth | date:'dd MMMM yyyy' }}</td>
+        <td>{{ data.phone }}</td>
+        <td>
+          <nz-tag [nzColor]="data.isActive ? 'success' : 'error'">
+            {{ data.isActive ? 'Active' : 'Non-active' }}
+          </nz-tag>
+        </td>
+      </tr>
+    }
+  </tbody>
+</nz-table>

@@ -1,12 +1,19 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { NzInputDirective } from 'ng-zorro-antd/input';
+import { FormsModule } from '@angular/forms';
+import { UsersTable } from '@features/users/components/users-table/users-table';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  imports: [
+    NzInputDirective,
+    FormsModule,
+    UsersTable,
+  ],
+  styleUrl: './app.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
-  protected readonly title = signal('test-assessment');
+  value = '';
 }

@@ -1,3 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+.ant-table-content th {
+  background-color: #f0f0f0;
+  color: #333;
+}
 
-@import 'tailwindcss';
+.ant-table-content td,
+.ant-table-content th {
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+}
+
+.ant-table-content table {
+  border-collapse: collapse;
+}
+
+.ant-table-content thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #fff;
+}
