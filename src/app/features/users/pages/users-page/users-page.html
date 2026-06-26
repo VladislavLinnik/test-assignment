@@ -1,3 +1,6 @@
-<app-users-search />
-<app-users-table />
-
+@defer (on idle) {
+  <app-users-search />
+  <app-users-table />
+} @placeholder {
+  <nz-skeleton />
+}
